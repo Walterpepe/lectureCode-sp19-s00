@@ -56,4 +56,22 @@ public class SLListTest {
         assertEquals(s3, SLList.of());
     }
 
+    @Test
+    public void TestReverseRecur() {
+        // Case 1
+        SLList s1 = SLList.of(5, 6, 2, 10);
+        s1.reverseRecur();
+        assertEquals(s1, SLList.of(10, 2, 6, 5));
+
+        // Case 2
+        SLList s2 = SLList.of(5);
+        s2.reverseRecur();
+        assertEquals(s2, SLList.of(5));
+
+        // Case 3
+        SLList s3 = SLList.of();
+        s3.reverseRecur();
+        assertEquals(s3, SLList.of());
+    }
+
 }

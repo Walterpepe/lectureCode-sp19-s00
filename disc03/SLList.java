@@ -49,30 +49,40 @@ public class SLList {
             return;
         }
 
-        IntNode ptr0 = null;
-        IntNode ptr1 = sentinel.next;
-        IntNode ptr2 = sentinel.next.next;
+        IntNode ptr0 = sentinel.next;
+        IntNode ptr1 = sentinel.next.next;
+        ptr0.next = null;
 
-        while (ptr2 != null) {
+        while (ptr1 != null) {
 
-            IntNode ptr3 = ptr2.next;
+            IntNode tmp = ptr1.next;
 
-            ptr2.next = ptr1;
             ptr1.next = ptr0;
 
             ptr0 = ptr1;
-            ptr1 = ptr2;
-            ptr2 = ptr3;
+            ptr1 = tmp;
         }
 
-        sentinel.next = ptr1;
+        sentinel.next = ptr0;
 
     }
 
     // problem 1.3 递归版本
-    // TODO
-    public void reverseRecursion() {
+    // @source 参考了答案，每看懂写递归的思路。
+    public void reverseRecur() {
+        sentinel.next = reverseHelper(sentinel.next);
+    }
 
+    private IntNode reverseHelper(IntNode lst) {
+        if (lst == null || lst.next == null) {
+            return lst;
+        } else {
+            IntNode endOfReversed = lst.next;
+            IntNode reversed = reverseHelper(lst.next);
+            endOfReversed.next = lst;
+            lst.next = null;
+            return reversed;
+        }
     }
 
     // 从IntList拷贝，做了一些修改。
