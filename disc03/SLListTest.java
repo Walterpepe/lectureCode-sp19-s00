@@ -12,7 +12,7 @@ public class SLListTest {
         s1.addFirst(5);
 
         SLList x = SLList.of(5, 6, 2);
-        assertEquals(s1, x);
+        assertEquals(x, s1);
     }
 
     @Test
@@ -24,7 +24,7 @@ public class SLListTest {
         s1.addFirst(5);
 
         s1.insert(10, 1);
-        assertEquals(s1, SLList.of(5, 10, 6, 2));
+        assertEquals(SLList.of(5, 10, 6, 2), s1);
 
         // Case 2
         SLList s2 = new SLList();
@@ -33,7 +33,7 @@ public class SLListTest {
         s2.addFirst(5);
 
         s2.insert(10, 7);
-        assertEquals(s2, SLList.of(5, 6, 2, 10));
+        assertEquals(SLList.of(5, 6, 2, 10), s2);
 
     }
 
@@ -43,17 +43,17 @@ public class SLListTest {
         // Case 1
         SLList s1 = SLList.of(5, 6, 2);
         s1.reverse();
-        assertEquals(s1, SLList.of(2, 6, 5));
+        assertEquals(SLList.of(2, 6, 5), s1);
 
         // Case 2
         SLList s2 = SLList.of(5);
         s2.reverse();
-        assertEquals(s2, SLList.of(5));
+        assertEquals(SLList.of(5), s2);
 
         // Case 3
         SLList s3 = SLList.of();
         s3.reverse();
-        assertEquals(s3, SLList.of());
+        assertEquals(SLList.of(), s3);
     }
 
     @Test
@@ -61,17 +61,17 @@ public class SLListTest {
         // Case 1
         SLList s1 = SLList.of(5, 6, 2, 10);
         s1.reverseRecur();
-        assertEquals(s1, SLList.of(10, 2, 6, 5));
+        assertEquals(SLList.of(10, 2, 6, 5), s1);
 
         // Case 2
         SLList s2 = SLList.of(5);
         s2.reverseRecur();
-        assertEquals(s2, SLList.of(5));
+        assertEquals(SLList.of(5), s2);
 
         // Case 3
         SLList s3 = SLList.of();
         s3.reverseRecur();
-        assertEquals(s3, SLList.of());
+        assertEquals(SLList.of(), s3);
     }
 
 }

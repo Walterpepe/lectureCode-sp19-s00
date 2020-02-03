@@ -68,7 +68,7 @@ public class SLList {
     }
 
     // problem 1.3 递归版本
-    // @source 参考了答案，每看懂写递归的思路。
+    // @source 参考了答案，没看懂写递归的思路。
     public void reverseRecur() {
         sentinel.next = reverseHelper(sentinel.next);
     }
