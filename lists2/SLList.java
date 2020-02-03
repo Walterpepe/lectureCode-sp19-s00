@@ -33,10 +33,28 @@ public class SLList {
 		size = 1;
 	}
 
+	public SLList(int[] arr) {
+		sentinel = new IntNode(63, null);
+		size = 0
+		IntNode ptr = sentinel;
+		for( int x: arr ){
+			ptr.next = new IntNode(x, null);
+			ptr = ptr.next;
+			size++;
+		}
+	}
+
  	/** Adds x to the front of the list. */
  	public void addFirst(int x) {
  		sentinel.next = new IntNode(x, sentinel.next);
  		size = size + 1;
+ 	}
+
+
+ 	// from guide lec4
+ 	public void deleteFirst() {
+ 		sentinel.next = sentinel.next.next;
+ 		size -= 1;
  	}
 
  	/** Returns the first item in the list. */
